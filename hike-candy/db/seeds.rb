@@ -1,3 +1,4 @@
+
 #################USERS##################
 User.create(first_name: 'Jon', last_name: 'apple', username: 'donboy')
 User.create(first_name: 'Quinn', last_name: 'Vox', username: 'Voxboy')
