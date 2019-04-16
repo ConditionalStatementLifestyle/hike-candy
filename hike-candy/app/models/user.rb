@@ -1,5 +1,10 @@
 class User < ApplicationRecord
 
+  has_secure_password
+
+  validates :first_name, :last_name, :username, :password, :password_confirmation, presence: true
+  validates :username, uniqueness: true
+
   has_many :trips
   has_many :posts
 
@@ -10,7 +15,5 @@ class User < ApplicationRecord
 
   has_many :followed_users, through: :active_relationships, source: :followed_user
   has_many :follower_users, through: :passive_relationships, source: :follower_user
-
-
 
 end
