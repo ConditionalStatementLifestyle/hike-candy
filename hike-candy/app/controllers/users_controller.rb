@@ -16,10 +16,10 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.valid?
       @user.save
-      redirect_to @user
+      redirect_to '/feed'
     else
       @errors = @user.errors.full_messages
-      render :new
+      redirect_to :signup
     end
   end
 
@@ -27,8 +27,8 @@ class UsersController < ApplicationController
 
 
   private
-    def user_params(params)
-      params.require(:user).permit(:first_name, :last_name, :username)
+    def user_params
+      params.require(:user).permit(:first_name, :last_name, :username, :password_confirmation, :password)
     end
 
 end
