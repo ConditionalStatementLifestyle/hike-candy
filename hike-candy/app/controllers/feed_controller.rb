@@ -1,7 +1,10 @@
 class FeedController < ApplicationController
 
   def feed
-    # @posts = Posts.last(5)
+    @posts = Post.last(5)
+    @trips = Trip.last(5)
+
+    
   end
 
 end

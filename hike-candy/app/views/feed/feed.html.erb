@@ -1,0 +1,11 @@
+<h1>Latest Trips</h1>
+<% @trips.each do |t| %>
+    <%= t.title %> - <%= "Rating: " + "#{t.rating}" %>  <%=link_to "Leave a comment"%><br>
+<% end %>
+<br>
+<br>
+<h1>Latest Posts</h1>
+<% @posts.each do |p| %>
+    <h3><%= p.title %></h3>
+    <%= p.description.truncate_words(4) %>  <%=link_to "Read the Full Post"%><br>
+<% end %>
