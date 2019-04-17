@@ -1,12 +1,12 @@
 
 #################USERS##################
-User.create(first_name: 'Jon', last_name: 'apple', username: 'donboy')
-User.create(first_name: 'Quinn', last_name: 'Vox', username: 'Voxboy')
-User.create(first_name: 'Abe', last_name: 'dude', username: 'abeboy')
-User.create(first_name: 'Doug', last_name: 'wort', username: 'Dougboy')
-User.create(first_name: 'Mera', last_name: 'French', username: 'paris')
-User.create(first_name: 'Joe', last_name: 'Jojo', username: 'jojo')
-User.create(first_name: 'Rylan', last_name: 'Merb', username: 'seadude')
+# User.create(first_name: 'Jon', last_name: 'apple', username: 'donboy')
+# User.create(first_name: 'Quinn', last_name: 'Vox', username: 'Voxboy')
+# User.create(first_name: 'Abe', last_name: 'dude', username: 'abeboy')
+# User.create(first_name: 'Doug', last_name: 'wort', username: 'Dougboy')
+# User.create(first_name: 'Mera', last_name: 'French', username: 'paris')
+# User.create(first_name: 'Joe', last_name: 'Jojo', username: 'jojo')
+# User.create(first_name: 'Rylan', last_name: 'Merb', username: 'seadude')
 
 
 #################POSTS##################
