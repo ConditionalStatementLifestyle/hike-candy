@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   post '/signup', to: 'users#create'
   get '/login', to: 'authentications#new'
   post '/login', to: 'authentications#create'
-  post '/logout', to: 'authentications#destroy'
+  delete '/logout', to: 'authentications#destroy'
   get '/feed', to: 'feed#feed'
 
   resources :users, only: [:index, :show, :create]
