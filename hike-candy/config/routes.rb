@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   get '/feed', to: 'feed#feed'
 
   resources :users, only: [:index, :show, :create]
-  resources :posts, only: [:index, :show, :create]
+  resources :posts
+  resources :trips
 end
