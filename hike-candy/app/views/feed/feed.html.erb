@@ -1,3 +1,6 @@
+<%=link_to "Create Trip", new_trip_path %>
+<%=link_to "Create Post", new_post_path %>
+
 <h1>Latest Trips</h1>
 <% @trips.each do |t| %>
     <%= t.title %> - <%= "Rating: " + "#{t.rating}" %>  <%=link_to "Read the Full Trip"%><br><br>
