@@ -15,16 +15,20 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+    @post.user_id = session[:user_id]
+
     if @post.save
-      redirect_to post_path(@post)
+      redirect_to @post
     else
       @errors = @post.errors.full_messages
       render :new
     end
+
   end
 
 
 private
+
   def post_params
     params.require(:post).permit(:title, :description)
   end
