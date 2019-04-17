@@ -6,6 +6,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @trips = @user.trips
+    @posts = @user.posts
   end
 
   def new

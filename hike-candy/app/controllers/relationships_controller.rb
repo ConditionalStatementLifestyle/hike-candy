@@ -1,4 +1,4 @@
-class FollowersController < ApplicationController
+class RelationshipsController < ApplicationController
 
   def index
     @active_relationships = current_user.active_relationships
