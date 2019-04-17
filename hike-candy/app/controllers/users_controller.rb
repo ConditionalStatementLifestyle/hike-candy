@@ -23,6 +23,11 @@ class UsersController < ApplicationController
     end
 
 
+    @posts = @user.posts.last(5)
+    @trips = @user.trips.last(5)
+
+
+
   end
 
   def new
