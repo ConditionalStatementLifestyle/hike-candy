@@ -1,8 +1,23 @@
 class RelationshipsController < ApplicationController
 
   def index
-    @active_relationships = current_user.active_relationships
-    @passive_relationships = current_user.passive_relationships
+
+    user = User.find(params[:id])
+    @following_relationships = user.active_relationships
+    @follower_relationships = user.passive_relationships
+    @followingcount = @following_relationships.count
+    @followercount = @follower_relationships.count
+
+    @followingobjects = @following_relationships.map do |ar|
+      User.find(ar.followed_id)
+    end
+
+    @followerobjects = @follower_relationships.map do |pr|
+      User.find(pr.follower_id)
+    end
+
+
+
   end
 
   def create

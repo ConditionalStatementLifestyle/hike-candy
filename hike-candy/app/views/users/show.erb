@@ -2,6 +2,11 @@
 <h3>Username: <%=@user.username%></h3>
 
 
+<h3>Following <%= link_to "(#{@followingcount})", follow_path(@user) %></h3>
+<br>
+<h3>Followers <%= link_to "(#{@followercount})", follow_path(@user) %></h3>
+
+
 <h1>My Trips</h1>
 <% @trips.each do |t| %>
     <%= t.title %> - <%= "Rating: " + "#{t.rating}" %>  <%=link_to "Read Trip Details", t%><br>
