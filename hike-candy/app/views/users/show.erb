@@ -1,2 +1,20 @@
 <h2>Name: <%=@user.first_name%> <%= @user.last_name%></h2>
 <h3>Username: <%=@user.username%></h3>
+
+
+<h3>Following <%= link_to "(#{@followingcount})", follow_path(@user) %></h3>
+<br>
+<h3>Followers <%= link_to "(#{@followercount})", follow_path(@user) %></h3>
+
+<h1><%= "Latest Trips" %></h1>
+  <% @trips.each do |t| %>
+      <%= t.title %> - <%= "Rating: " + "#{t.rating}" %> <br> <%=link_to "Read the Full Trip"%><br><br>
+  <% end %>
+  <br>
+<h1><%= "Latest Posts" %></h1>
+  <% @posts.each do |p| %>
+      <h3><%= p.title %></h3>
+      <%= p.description.truncate_words(4) %>  <%=link_to "Read the Full Post"%><br>
+  <% end %>
+
+

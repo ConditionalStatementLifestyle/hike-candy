@@ -1,11 +1,18 @@
+<%=link_to "Create Trip", new_trip_path %>
+<%=link_to "Create Post", new_post_path %>
+
 <h1>Latest Trips</h1>
 <% @trips.each do |t| %>
-    <%= t.title %> - <%= "Rating: " + "#{t.rating}" %>  <%=link_to "Leave a comment",t%><br>
+    <%= t.title %> - <%= "Rating: " + "#{t.rating}" %>  <%=link_to "Read the Full Trip"%><br><br>
 <% end %>
+<br>
+<%=link_to "See All Trips", trips_path%>
 <br>
 <br>
 <h1>Latest Posts</h1>
 <% @posts.each do |p| %>
     <h3><%= p.title %></h3>
-    <%= p.description.truncate_words(4) %>  <%=link_to "Read the Full Post",p%><br>
+    <%= p.description.truncate_words(4) %>  <%=link_to "Read the Full Post", p%><br>
 <% end %>
+<br>
+<%=link_to "See All Posts", posts_path%>

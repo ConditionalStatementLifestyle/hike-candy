@@ -7,9 +7,12 @@ Rails.application.routes.draw do
   post '/login', to: 'authentications#create'
   delete '/logout', to: 'authentications#destroy'
   get '/feed', to: 'feed#feed'
+  get 'users/:id/follow', to: 'relationships#index', as: "follow"
 
-  resources :users, only: [:index, :show, :create]
+  resources :users, only: [:index, :show]
   resources :posts
   resources :trips
-  resources :comments
+  resources :comments, only: [:create]
+  resources :relationships, only: [:create, :destroy]
+
 end
