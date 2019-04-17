@@ -7,6 +7,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
 
+
     current_user = User.find(session[:user_id])
     @following_relationships = current_user.active_relationships
     @follower_relationships = current_user.passive_relationships
@@ -20,6 +21,7 @@ class UsersController < ApplicationController
     @followerobjects = @follower_relationships.map do |pr|
       User.find(pr.follower_id)
     end
+
 
   end
 
