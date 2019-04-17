@@ -6,6 +6,21 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+
+    current_user = User.find(session[:user_id])
+    @following_relationships = current_user.active_relationships
+    @follower_relationships = current_user.passive_relationships
+    @followingcount = @following_relationships.count
+    @followercount = @follower_relationships.count
+
+    @followingobjects = @following_relationships.map do |ar|
+      User.find(ar.followed_id)
+    end
+
+    @followerobjects = @follower_relationships.map do |pr|
+      User.find(pr.follower_id)
+    end
+
   end
 
   def new
@@ -14,7 +29,6 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    byebug
     if @user.valid?
       @user.save
       redirect_to '/feed'

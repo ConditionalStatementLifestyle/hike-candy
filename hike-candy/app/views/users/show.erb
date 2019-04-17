@@ -1,2 +1,6 @@
 <h2>Name: <%=@user.first_name%> <%= @user.last_name%></h2>
 <h3>Username: <%=@user.username%></h3>
+
+<h3>Following <%= link_to "(#{@followingcount})", follow_path(@user) %></h3>
+<br>
+<h3>Followers <%= link_to "(#{@followercount})", follow_path(@user) %></h3>
