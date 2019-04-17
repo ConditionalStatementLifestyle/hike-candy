@@ -1,2 +1,3 @@
 <h2><%=@post.title%></h2>
+<p>By: <%=link_to @post.user.username, user_path(@post.user)%>
 <p><%=@post.description%></p>

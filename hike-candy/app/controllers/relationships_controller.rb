@@ -1,6 +1,7 @@
 class RelationshipsController < ApplicationController
 
   def index
+
     user = User.find(params[:id])
     @following_relationships = user.active_relationships
     @follower_relationships = user.passive_relationships
@@ -14,6 +15,7 @@ class RelationshipsController < ApplicationController
     @followerobjects = @follower_relationships.map do |pr|
       User.find(pr.follower_id)
     end
+
 
 
   end
