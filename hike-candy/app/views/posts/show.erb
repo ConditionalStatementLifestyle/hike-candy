@@ -1,2 +1,9 @@
 <h2><%=@post.title%></h2>
 <p><%=@post.description%></p>
+
+<%@comments.each do |comment|%>
+<h3><%=User.find(comment.user_id).full_name%></h3>
+<h3><%=comment.content%></h3>
+<%end%>
+
+<%= render partial: 'comments/form', object: @comment  %>

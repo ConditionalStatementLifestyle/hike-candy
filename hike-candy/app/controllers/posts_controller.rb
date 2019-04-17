@@ -6,6 +6,8 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @comment = Comment.new(commentable: @post)
+    @comments = Comment.post_comments.select {|comment| comment.commentable_id == params[:id].to_i}
   end
 
   def new
@@ -16,7 +18,6 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user_id = session[:user_id]
-
     if @post.save
       redirect_to @post
     else
