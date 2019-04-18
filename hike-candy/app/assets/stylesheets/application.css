@@ -13,12 +13,18 @@
  *= require_tree .
  *= require_self
  */
+
+ @import "font-awesome";
+@import "bootstrap"
+
 button.logout {
   width: 80px;
   height: 25px;
   border-radius: 5px;
   background-color: green;
 }
+
+
 
 button.logout:hover {
   background-color: blue;
@@ -27,6 +33,38 @@ button.logout:hover {
 h1.welcome_page {
   font-size: 70px;
 }
+
+.navbar {
+  border-style:solid;
+  border-color: black;
+  color: white;
+  background-color: black;
+}
+
+.navtext {
+  color: white;
+}
+
+.links {
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+#tree {
+  size: 100px;
+  font-size: 100px;
+  color: black;
+}
+#feed {
+  border-style:solid;
+  border-color: black;
+  margin: 20px;
+}
+
+
 
 
 body.welcome_page {
