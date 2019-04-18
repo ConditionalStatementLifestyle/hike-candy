@@ -1,0 +1,16 @@
+<% if params[:id] != session[:user_id] %>
+  <% if !@user.follow?(@follow) %>
+
+    <%= form_tag('/relationships') do %>
+      <%= hidden_field_tag :followed_id, @follow.id %>
+      <%= hidden_field_tag :follower_id, @user.id %>
+      <%= submit_tag "Follow #{@follow.username}" %>
+    <% end %>
+
+  <% else %>
+
+    <%= button_to "Unfollow #{@follow.username}", relationship_path, method: :delete %>
+
+  <% end %>
+
+<% end %>

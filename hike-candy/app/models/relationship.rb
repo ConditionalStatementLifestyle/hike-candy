@@ -5,4 +5,5 @@ class Relationship < ApplicationRecord
 
 
 
+
 end

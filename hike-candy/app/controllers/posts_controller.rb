@@ -6,8 +6,11 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @user = User.find(session[:user_id])
+    @follow = @post.user
     @comment = Comment.new(commentable: @post)
     @comments = Comment.post_comments.select {|comment| comment.commentable_id == params[:id].to_i}
+
   end
 
   def new

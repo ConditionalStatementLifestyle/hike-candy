@@ -1,10 +1,13 @@
+
+
 <h2><%=@post.title%></h2>
 <p>By: <%=link_to @post.user.username, user_path(@post.user)%>
 <p><%=@post.description%></p>
-
+<%= render 'relationships/follow', locals: {follow: @follow, user: @user} %>
 <%@comments.each do |comment|%>
 <h3><%=User.find(comment.user_id).full_name%></h3>
 <h3><%=comment.content%></h3>
 <%end%>
 
 <%= render partial: 'comments/form', object: @comment  %>
+

@@ -1,3 +1,4 @@
+<%= render :follow %>
 <h3><%= "Followers (#{@followingcount})" %></h3>
 <% @followingobjects.each do |ar| %>
 <%= link_to ar.username, user_path(ar) %><br>
