@@ -6,9 +6,13 @@
     <%= t.title %> - <%= "Rating: " + "#{t.rating}" %>  <%=link_to "Read the Full Trip", trip_path(t)%><br><br>
 <% end %>
 <br>
+<%=link_to "See All Trips", trips_path%>
+<br>
 <br>
 <h1>Latest Posts</h1>
 <% @posts.each do |p| %>
     <h3><%= p.title %></h3>
     <%= p.description.truncate_words(4) %>  <%=link_to "Read the Full Post", post_path(p)%><br>
 <% end %>
+<br>
+<%=link_to "See All Posts", posts_path%>
