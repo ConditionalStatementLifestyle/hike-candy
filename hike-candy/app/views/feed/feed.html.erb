@@ -3,7 +3,7 @@
 <div style = "text-align: center;"">
 <h1>Latest Trips</h1>
 <% @trips.each do |t| %>
-    <div id="feed"><%= t.title %> - <%= "Rating: " + "#{t.rating}" %>  <%=link_to "Read the Full Trip", trip_path(t)%><br><br></div>
+    <div class="feed"><%= t.title %> - <%= "Rating: " + "#{t.rating}" %>  <%=link_to "Read the Full Trip", trip_path(t)%><br><br></div>
 <% end %>
 <br>
 <%=link_to "See All Trips", trips_path%>
