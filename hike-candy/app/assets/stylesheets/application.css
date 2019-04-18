@@ -49,6 +49,10 @@ h1.welcome_page {
   text-decoration: none;
 }
 
+.login {
+  text-align: center;
+}
+
 a {
   text-decoration: none;
 }
