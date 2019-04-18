@@ -1,6 +1,7 @@
 @import "font-awesome";
 @import "bootstrap";
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url("https://fonts.googleapis.com/css?family=Dancing+Script");
 
 button.logout {
   width: 80px;
@@ -15,14 +16,13 @@ button.logout:hover {
 
 .navbar {
   border-style:solid;
-  border-color: white;
+  border-color: transparent;
   color: black;
-  background-color: white;
-
-}
-
-.navtext {
-  color: white;
+  background-color: transparent;
+  height: 30px;
+  margin-top: 30px;
+  font-size: 20px;
+  font-family: dancing script;
 }
 
 .links {
@@ -33,6 +33,7 @@ hr {
 width: 60%;
 margin-left: auto;
 margin-right: auto;
+color: white;
 }
 
 .login {
@@ -46,9 +47,9 @@ a {
 }
 
 #tree {
-  size: 40px;
-  font-size: 40px;
-  color: green;
+  size: 60px;
+  font-size: 60px;
+  color: black;
 }
 .feed {
   border-style:solid;
