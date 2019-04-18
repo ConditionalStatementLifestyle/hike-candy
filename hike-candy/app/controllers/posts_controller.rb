@@ -8,6 +8,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @user = User.find(session[:user_id])
     @follow = @post.user
+    byebug
     @comment = Comment.new(commentable: @post)
     @comments = Comment.post_comments.select {|comment| comment.commentable_id == params[:id].to_i}
 

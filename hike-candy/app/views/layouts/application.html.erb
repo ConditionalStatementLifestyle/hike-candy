@@ -10,6 +10,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+  
 
   <body>
 
@@ -21,6 +22,7 @@
 
         <div class="right menu">
           <% if logged_in? %>
+              <%= "Current User: #{session[:username]}"%><br>
               <button class="logout"><%= link_to 'Logout', logout_path, {class: 'item', method: 'delete'} %></button>
             <% else %>
               <%= link_to 'Create a New Account', signup_path, {class: 'item'} %>

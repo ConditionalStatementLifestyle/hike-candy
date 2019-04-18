@@ -5,6 +5,9 @@ class TripsController < ApplicationController
   end
 
   def show
+    @user = User.find(session[:user_id])
+    @follow = User.find(params[:id])
+    # byebug
     @trip = Trip.find(params[:id])
     @comment = Comment.new(commentable: @trip)
     @comments = Comment.trip_comments.select {|comment| comment.commentable_id == params[:id].to_i}

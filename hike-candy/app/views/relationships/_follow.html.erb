@@ -4,12 +4,13 @@
     <%= form_tag('/relationships') do %>
       <%= hidden_field_tag :followed_id, @follow.id %>
       <%= hidden_field_tag :follower_id, @user.id %>
-      <%= submit_tag "Follow #{@follow.username}" %>
+      <%= submit_tag "Follow" %>
+      <%=%>
     <% end %>
 
   <% else %>
 
-    <%= button_to "Unfollow #{@follow.username}", relationship_path, method: :delete %>
+    <%= button_to "Unfollow", relationship_path, method: :delete %>
 
   <% end %>
 
