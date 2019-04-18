@@ -1,6 +1,5 @@
 <% if params[:id] != session[:user_id] %>
   <% if !@user.follow?(@follow) %>
-
     <%= form_tag('/relationships') do %>
       <%= hidden_field_tag :followed_id, @follow.id %>
       <%= hidden_field_tag :follower_id, @user.id %>

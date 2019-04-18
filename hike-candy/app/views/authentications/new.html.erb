@@ -1,9 +1,9 @@
 <%=@errors%>
 
-<%=form_for :authentication, url: '/login' do |f| %>
+<div class='login'><%=form_for :authentication, url: '/login' do |f| %>
   <%=f.label :username%>
   <%=f.text_field :username%><br>
   <%=f.label :password%>
   <%=f.password_field :password%><br>
   <%=f.submit "Log In"%>
-<%end%>
+<%end%></div>

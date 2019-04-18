@@ -20,6 +20,7 @@ class RelationshipsController < ApplicationController
 
   def create
     Relationship.create(follower_id: params[:follower_id], followed_id: params[:followed_id])
+    redirect_back(fallback_location: root_path)
   end
 
 
@@ -30,6 +31,7 @@ class RelationshipsController < ApplicationController
 
     @relation = Relationship.select do |r| r.follower_id == @user.id && r.followed_id == @follow.id end
     @relation[0].destroy
+    redirect_back(fallback_location: root_path)
   end
 
 
