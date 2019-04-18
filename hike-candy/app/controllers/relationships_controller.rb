@@ -2,9 +2,9 @@ class RelationshipsController < ApplicationController
 
   def index
 
-    user = User.find(params[:id])
-    @following_relationships = user.active_relationships
-    @follower_relationships = user.passive_relationships
+    @user = User.find(params[:id])
+    @following_relationships = @user.active_relationships
+    @follower_relationships = @user.passive_relationships
     @followingcount = @following_relationships.count
     @followercount = @follower_relationships.count
 
@@ -28,9 +28,7 @@ class RelationshipsController < ApplicationController
     @user = User.find(session[:user_id])
     @follow = @post.user
 
-    @relation = Relationship.select do |r|
-        r.follower_id == @user.id && r.followed_id == @follow.id
-      end
+    @relation = Relationship.select do |r| r.follower_id == @user.id && r.followed_id == @follow.id end
     @relation[0].destroy
   end
 
