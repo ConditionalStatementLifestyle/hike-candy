@@ -10,6 +10,9 @@ class UsersController < ApplicationController
 
     @following_relationships = @follow.active_relationships
     @follower_relationships = @follow.passive_relationships
+
+    current_user = User.find(params[:id])
+
     @followingcount = @following_relationships.count
     @followercount = @follower_relationships.count
 
