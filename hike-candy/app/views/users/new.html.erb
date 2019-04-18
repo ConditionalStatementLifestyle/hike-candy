@@ -1,13 +1,23 @@
-<%= form_for :user, url: '/signup' do |f| %>
-  <%=f.label :first_name%>
-  <%=f.text_field :first_name%>
-  <%=f.label :last_name%>
-  <%=f.text_field :last_name%><br>
-  <%=f.label :username%>
-  <%=f.text_field :username%><br><br>
-  <%=f.label :password%>
-  <%=f.password_field :password%><br>
-  <%=f.label "Confirm Password"%>
-  <%=f.password_field :password_confirmation%><br>
-  <%=f.submit "Create"%>
-<%end%>
+<body>
+
+  <div class='login'>
+
+      <%= form_for :user, url: '/signup' do |f| %>
+        <p><%=f.label :first_name%>
+        <%=f.text_field :first_name%></p>
+        <p><%=f.label :last_name%>
+        <%=f.text_field :last_name%></p>
+        <p><%=f.label :username%>
+        <%=f.text_field :username%></p>
+        <p><%=f.label :password%>
+        <%=f.password_field :password%></p>
+        <p><%=f.label "Confirm Password"%>
+        <%=f.password_field :password_confirmation%></p>
+        <p><%=f.submit "Create"%></p>
+      <%end%>
+
+      <p>Already have an account? <%=link_to "Sign In", login_path%></p>
+
+  </div>
+
+</body>
