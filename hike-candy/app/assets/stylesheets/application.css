@@ -36,9 +36,10 @@ h1.welcome_page {
 
 .navbar {
   border-style:solid;
-  border-color: black;
-  color: white;
-  background-color: black;
+  border-color: white;
+  color: black;
+  background-color: white;
+
 }
 
 .navtext {
@@ -49,12 +50,19 @@ h1.welcome_page {
   text-decoration: none;
 }
 
+hr {
+width: 60%;
+margin-left: auto;
+margin-right: auto;
+}
+
 .login {
   text-align: center;
 }
 
 a {
   text-decoration: none;
+  color: black;
 }
 
 #tree {
@@ -62,10 +70,11 @@ a {
   font-size: 100px;
   color: black;
 }
-#feed {
+.feed {
   border-style:solid;
   border-color: black;
   margin: 20px;
+  color: black;
 }
 
 

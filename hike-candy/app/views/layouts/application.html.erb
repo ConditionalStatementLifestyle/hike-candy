@@ -14,20 +14,17 @@
 
   <body>
 
-      <div class='navbar'>
-        <div style='color: white;'><%= link_to "Posts", posts_path%> </div>
+      <div class="navbar">
+        <a style="margin-left:28%"><%= link_to "Posts", posts_path%> </a>
+        <a style="margin-left:14%"><%= link_to "Trips", trips_path%> </a>
+        <% if logged_in? %>
+            <div style="float: left;"><%= "Current User: #{session[:username]}"%></div>
+            <div style="float: right;"><%= link_to 'Logout', logout_path, {class: 'item', method: 'delete'} %></div>
+          <% end %>
       </div>
+      <hr>
 
       <div id="tree"><h1 class="fa fa-tree">Hike Candy</h1></div>
-
-        <div class="right menu">
-          <% if logged_in? %>
-              <%= "Current User: #{session[:username]}"%><br>
-              <button class="logout"><%= link_to 'Logout', logout_path, {class: 'item', method: 'delete'} %></button>
-            <% else %>
-              <%= link_to 'Create a New Account', signup_path, {class: 'item'} %>
-            <% end %>
-          </div><br>
 
     <%= yield %>
   </body>
