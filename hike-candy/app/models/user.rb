@@ -16,4 +16,9 @@ class User < ApplicationRecord
   has_many :followed_users, through: :active_relationships, source: :followed_user
   has_many :follower_users, through: :passive_relationships, source: :follower_user
 
+
+  def follow?(follow)
+    followed_users.include?(follow)
+  end
+
 end

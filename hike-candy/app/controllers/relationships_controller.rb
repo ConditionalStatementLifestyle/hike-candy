@@ -1,6 +1,7 @@
 class RelationshipsController < ApplicationController
 
   def index
+    # byebug
     user = User.find(params[:id])
     @following_relationships = user.active_relationships
     @follower_relationships = user.passive_relationships
@@ -14,29 +15,22 @@ class RelationshipsController < ApplicationController
     @followerobjects = @follower_relationships.map do |pr|
       User.find(pr.follower_id)
     end
-
-
   end
 
   def create
-    @followed_user = User.find(params[:relationship][:followed_id])
-    @relationship = current_user.active_relationships.new(followed_id: @followed_user.id)
-    if @relationship.save
-      flash[:message] = "Follow Success"
-      #redirect?
-    else
-      flash[:message] = "Follow Unsuccessful"
-      #redirect?
-    end
+    Relationship.create(follower_id: params[:follower_id], followed_id: params[:followed_id])
   end
 
+
   def destroy
-    @relationship = Relationship.find(params[:id])
-    if @relationship.follower_user == current_user
-      @relationship.destroy
-      flash[:message] = "Unfollowed"
-    end
-    #redirect
+    @post = Post.find(params[:id])
+    @user = User.find(session[:user_id])
+    @follow = @post.user
+
+    @relation = Relationship.select do |r|
+        r.follower_id == @user.id && r.followed_id == @follow.id
+      end
+    @relation[0].destroy
   end
 
 
