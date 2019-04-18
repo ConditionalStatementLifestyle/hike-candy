@@ -19,7 +19,7 @@ class User < ApplicationRecord
 
   def follow?(follow)
     followed_users.include?(follow)
-
+  end
 
   def full_name
     "#{self.first_name} #{self.last_name}"

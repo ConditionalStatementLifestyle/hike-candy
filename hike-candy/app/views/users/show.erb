@@ -1,20 +1,18 @@
-<h2>Name: <%=@user.first_name%> <%= @user.last_name%></h2>
-<h3>Username: <%=@user.username%></h3>
+<h3>Name: <%=@follow.first_name%> <%= @follow.last_name%></h3>
+<p>Username: <%=@follow.username%></p>
 
+<%= render 'relationships/follow', locals: {follow: @follow, user: @user} %>
 
-<h3>Following <%= link_to "(#{@followingcount})", follow_path(@user) %></h3>
-<br>
-<h3>Followers <%= link_to "(#{@followercount})", follow_path(@user) %></h3>
+<p>Following <%= link_to "(#{@followingcount})", follow_path(@follow) %></p>
+<p>Followers <%= link_to "(#{@followercount})", follow_path(@follow) %></p>
 
 <h1><%= "Latest Trips" %></h1>
   <% @trips.each do |t| %>
-      <%= t.title %> - <%= "Rating: " + "#{t.rating}" %> <br> <%=link_to "Read the Full Trip"%><br><br>
+      <%= t.title %> - <%= "Rating: " + "#{t.rating}" %> <br> <%=link_to "Read the Full Trip", trip_path(t)%><br><br>
   <% end %>
   <br>
 <h1><%= "Latest Posts" %></h1>
   <% @posts.each do |p| %>
       <h3><%= p.title %></h3>
-      <%= p.description.truncate_words(4) %>  <%=link_to "Read the Full Post"%><br>
+      <%= p.description.truncate_words(4) %>  <%=link_to "Read the Full Post", post_path(p)%><br>
   <% end %>
-
-

@@ -5,12 +5,11 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.find(session[:user_id])
+    @follow = User.find(params[:id])
 
-
-    current_user = User.find(session[:user_id])
-    @following_relationships = current_user.active_relationships
-    @follower_relationships = current_user.passive_relationships
+    @following_relationships = @follow.active_relationships
+    @follower_relationships = @follow.passive_relationships
     @followingcount = @following_relationships.count
     @followercount = @follower_relationships.count
 

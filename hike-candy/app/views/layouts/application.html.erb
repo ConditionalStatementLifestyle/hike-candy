@@ -11,6 +11,7 @@
 <h1>Hike Candy</h1>
     <div class="right menu">
       <% if logged_in? %>
+          <%= "Current User: #{session[:username]}"%><br>
           <%= link_to 'Logout', logout_path, {class: 'item', method: 'delete'} %>
         <% else %>
           <%= link_to 'Create a New Account', signup_path, {class: 'item'} %>
