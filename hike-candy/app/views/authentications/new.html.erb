@@ -1,9 +1,14 @@
 <%=@errors%>
+<body>
+  <div class='login'>
+    <%=form_for :authentication, url: '/login' do |f| %>
+      <p><%=f.label :username%>
+      <%=f.text_field :username%></p>
+      <p><%=f.label :password%>
+      <%=f.password_field :password%></p>
+      <p><%=f.submit "Log In"%></p>
+    <%end%>
 
-<div class='login'><%=form_for :authentication, url: '/login' do |f| %>
-  <%=f.label :username%>
-  <%=f.text_field :username%><br>
-  <%=f.label :password%>
-  <%=f.password_field :password%><br>
-  <%=f.submit "Log In"%>
-<%end%></div>
+  <p><%=link_to "Create a New Account", signup_path%></p>
+  </div>
+</body>

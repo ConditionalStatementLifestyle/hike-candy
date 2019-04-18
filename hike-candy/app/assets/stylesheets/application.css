@@ -1,21 +1,6 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
-
- @import "font-awesome";
-@import "bootstrap"
+@import "font-awesome";
+@import "bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
 
 button.logout {
   width: 80px;
@@ -24,14 +9,8 @@ button.logout {
   background-color: green;
 }
 
-
-
 button.logout:hover {
   background-color: blue;
-}
-
-h1.welcome_page {
-  font-size: 70px;
 }
 
 .navbar {
@@ -60,15 +39,16 @@ margin-right: auto;
   text-align: center;
 }
 
+
 a {
   text-decoration: none;
   color: black;
 }
 
 #tree {
-  size: 100px;
-  font-size: 100px;
-  color: black;
+  size: 40px;
+  font-size: 40px;
+  color: green;
 }
 .feed {
   border-style:solid;
@@ -77,11 +57,28 @@ a {
   color: black;
 }
 
-
-
-
-body.welcome_page {
- background-image: url('http://www.wallpapers13.com/wp-content/uploads/2016/10/Diablo-Lake-in-Washington-State-USA-Forest-Mountains-green-pine-trees-lake-water-turquoise-blue-mist-fume-beautiful-HD-Desktop-Wallpaper-1920x1080.jpg');
- background-color: yellow;
+body {
+ background-image: url('https://images.pexels.com/photos/414528/pexels-photo-414528.jpeg?cs=srgb&dl=clouds-dawn-environment-414528.jpg&fm=jpg');
+ background-color: white;
  background-size: cover;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+p {
+  font-size: 30px;
+}
+
+.login {
+  text-align: center;
+}
+
+.welcome {
+  text-align: center;
+}
+
+.signup {
+  text-align: center;
 }
