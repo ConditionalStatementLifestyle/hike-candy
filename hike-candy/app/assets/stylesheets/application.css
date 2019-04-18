@@ -13,3 +13,24 @@
  *= require_tree .
  *= require_self
  */
+button.logout {
+  width: 80px;
+  height: 25px;
+  border-radius: 5px;
+  background-color: green;
+}
+
+button.logout:hover {
+  background-color: blue;
+}
+
+h1.welcome_page {
+  font-size: 70px;
+}
+
+
+body.welcome_page {
+ background-image: url('http://www.wallpapers13.com/wp-content/uploads/2016/10/Diablo-Lake-in-Washington-State-USA-Forest-Mountains-green-pine-trees-lake-water-turquoise-blue-mist-fume-beautiful-HD-Desktop-Wallpaper-1920x1080.jpg');
+ background-color: yellow;
+ background-size: cover;
+}
