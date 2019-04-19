@@ -8,14 +8,15 @@
 <h1><%= "Latest Trips" %></h1>
   <% @trips.each do |t| %>
   <text>---------------------------------</text>
-      <%= t.title %> - <%= "Rating: " + "#{t.rating}" %> <br> <%=link_to "Read the Full Trip", trip_path(t)%><br><br>
+      <h3><%= t.title %> - <%= "Rating: " + "#{t.rating}" %></h3> <%=link_to "Read the Full Trip", trip_path(t)%><br><br>
   <% end %>
   <br>
 <h1><%= "Latest Posts" %></h1>
   <% @posts.each do |p| %>
   <text>---------------------------------</text>
       <h3><%= p.title %></h3>
-      <%= p.description.truncate_words(4) %>  <%=link_to "Read the Full Post", post_path(p)%><br>
+      <%= p.description.truncate_words(4) %><br>
+      <%=link_to "Read the Full Post", post_path(p)%>
   <% end %>
   <br>
   <br>
