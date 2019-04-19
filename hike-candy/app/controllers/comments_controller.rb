@@ -6,11 +6,7 @@ class CommentsController < ApplicationController
     @comment.commentable_id = params["commentable_id"]
     @comment.commentable_type = params["commentable_type"]
     @comment.save
-    if @comment.commentable_type == "Post"
-      redirect_to "/posts/#{@comment.commentable_id}"
-    else
-      redirect_to "/trips/#{@comment.commentable_id}"
-    end
+    redirect_back(fallback_location: root_path)
   end
 
   private
