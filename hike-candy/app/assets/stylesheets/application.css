@@ -75,6 +75,12 @@ a {
   font-family: dancing script;
 }
 
+.post_title_ind {
+  color: black;
+  font-size: 30px;
+  font-family: dancing script;
+}
+
 .post_details {
   color: black;
   font-size: 25px;
@@ -132,12 +138,12 @@ p.comment {
 
 
 a:link {
-  color: blue;
+  color: black;
 }
 
 /* visited link */
 a:visited {
-  color: green;
+  color: black;
 }
 
 /* mouse over link */
