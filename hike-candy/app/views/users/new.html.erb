@@ -1,23 +1,27 @@
-<body>
+<div class = 'trip_post_text'>
 
-  <div class='login'>
+  <body>
 
-      <%= form_for :user, url: '/signup' do |f| %>
-        <p><%=f.label :first_name%>
-        <%=f.text_field :first_name%></p>
-        <p><%=f.label :last_name%>
-        <%=f.text_field :last_name%></p>
-        <p><%=f.label :username%>
-        <%=f.text_field :username%></p>
-        <p><%=f.label :password%>
-        <%=f.password_field :password%></p>
-        <p><%=f.label "Confirm Password"%>
-        <%=f.password_field :password_confirmation%></p>
-        <p><%=f.submit "Create"%></p>
-      <%end%>
+    <div class='login'>
 
-      <p>Already have an account? <%=link_to "Sign In", login_path%></p>
+        <%= form_for :user, url: '/signup' do |f| %>
+          <p><%=f.label :first_name%>
+          <%=f.text_field :first_name%></p>
+          <p><%=f.label :last_name%>
+          <%=f.text_field :last_name%></p>
+          <p><%=f.label :username%>
+          <%=f.text_field :username%></p>
+          <p><%=f.label :password%>
+          <%=f.password_field :password%></p>
+          <p><%=f.label "Confirm Password"%>
+          <%=f.password_field :password_confirmation%></p>
+          <p><%=f.submit "Create"%></p>
+        <%end%>
 
-  </div>
+        <p>Already have an account? <%=link_to "Sign In", login_path%></p>
 
-</body>
+    </div>
+
+  </body>
+
+</div>

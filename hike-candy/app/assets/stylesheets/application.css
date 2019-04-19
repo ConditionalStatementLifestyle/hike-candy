@@ -25,9 +25,9 @@ button.logout:hover {
   font-family: dancing script;
 }
 
-.links {
+/* .links {
   text-decoration: none;
-}
+} */
 
 hr {
 width: 60%;
@@ -69,7 +69,16 @@ h1 {
 }
 
 p {
-  font-size: 30px;
+  font-size: 20px;
+}
+
+p.comment_author {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+p.comment {
+  font-size: 18px;
 }
 
 .login {
@@ -83,3 +92,33 @@ p {
 .signup {
   text-align: center;
 }
+
+.backgroundbox {
+  text-align: center;
+  background-color: white;
+  background-size: 50%;
+}
+
+
+a:link {
+  color: blue;
+}
+
+/* visited link */
+a:visited {
+  color: green;
+}
+
+/* mouse over link */
+a:hover {
+  color: blue;
+}
+
+/* selected link */
+a:active {
+  color: green;
+}
+
+/* .trip_post_text {
+  font-family: Montserrat, sans-serif;
+} */

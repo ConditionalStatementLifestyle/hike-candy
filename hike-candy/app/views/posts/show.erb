@@ -1,13 +1,22 @@
 
+<div class='backgroundbox'>
+  <h1><%=@post.title%></h1>
+      <p>By: <%=link_to @post.user.username, user_path(@post.user)%></p>
+      <%= render 'relationships/follow', locals: {follow: @follow, user: @user} %>
+      <text>---------------------------------</text>
+      <text>---------------------------------</text>
+      <p><%=@post.description%></p><br>
 
-<h2><%=@post.title%></h2>
-<p>By: <%=link_to @post.user.username, user_path(@post.user)%>
-<p><%=@post.description%></p>
-<%= render 'relationships/follow', locals: {follow: @follow, user: @user} %>
-<%@comments.each do |comment|%>
-<h3><%=User.find(comment.user_id).full_name%></h3>
-<h3><%=comment.content%></h3>
-<%end%>
+      <text>---------------------------------</text>
+      <text>COMMENTS</text>
+      <text>---------------------------------</text>
+      <%@comments.reverse.each do |comment|%>
+        <p class='comment'><%=comment.content%></p>
+        <p class='comment_author'>@<%=User.find(comment.user_id).username%></p>
+        <text>---------------------------------</text>
+      <%end%>
 
 <%= render partial: 'comments/form', object: @comment  %>
-
+<br>
+<br>
+</div>
