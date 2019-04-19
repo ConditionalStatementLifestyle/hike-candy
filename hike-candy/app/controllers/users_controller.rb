@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(session[:user_id])
     @follow = User.find(params[:id])
-
+    @event_user_id = @follow.id
     @following_relationships = @follow.active_relationships
     @follower_relationships = @follow.passive_relationships
 
