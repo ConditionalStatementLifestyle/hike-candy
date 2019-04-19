@@ -1,5 +1,4 @@
 @import "font-awesome";
-@import "bootstrap";
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 @import url("https://fonts.googleapis.com/css?family=Dancing+Script");
 
@@ -20,9 +19,10 @@ button.logout:hover {
   color: black;
   background-color: transparent;
   height: 30px;
-  margin-top: 30px;
-  font-size: 20px;
+  margin-top: 25px;
+  font-size: 25px;
   font-family: dancing script;
+  text-align: center;
 }
 
 .links {
@@ -52,16 +52,47 @@ a {
   color: black;
 }
 .feed {
-  border-style:solid;
-  border-color: black;
   margin: 20px;
   color: black;
+  font-size: 25px;
+  font-family: dancing script;
+}
+.feed_title {
+  color: black;
+  font-size: 70px;
+  font-family: dancing script;
+}
+
+.feed_words {
+  color: black;
+  font-size: 40px;
+  font-family: dancing script;
+}
+
+.post_title {
+  color: black;
+  font-size: 40px;
+  font-family: dancing script;
+}
+
+.post_details {
+  color: black;
+  font-size: 25px;
+  font-family: dancing script;
 }
 
 body {
  background-image: url('https://images.pexels.com/photos/414528/pexels-photo-414528.jpeg?cs=srgb&dl=clouds-dawn-environment-414528.jpg&fm=jpg');
  background-color: white;
  background-size: cover;
+}
+
+.background {
+  text-align: center;
+  background-color: white;
+  width: 80%;
+  margin-left: 10%;
+  background-position: center;
 }
 
 h1 {
