@@ -2,6 +2,7 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.new(user_params)
+    @errors = @comment.errors
     @comment.user_id = session[:user_id]
     @comment.commentable_id = params["commentable_id"]
     @comment.commentable_type = params["commentable_type"]

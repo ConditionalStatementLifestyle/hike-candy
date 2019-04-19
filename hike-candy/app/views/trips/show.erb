@@ -1,19 +1,20 @@
 <div class='backgroundbox'>
   <h1><%=@trip.title%></h1>
-  <p>By: <%=link_to @trip.user.username, user_path(@trip.user)%></p>
-  <%= render 'relationships/follow', locals: {follow: @follow, user: @user} %><br>
-  <text>---------------------------------</text>
-  <p><strong>Region: </strong><%=@trip.region%>  -  <strong>Rating: </strong><%=@trip.rating%>  -  <strong>Date of Trip: </strong><%=@trip.date%></p>
-  <text>---------------------------------</text>
-  <p><%=@trip.content%></p><br>
+    <p>By: <%=link_to @trip.user.username, user_path(@trip.user)%></p>
+    <%= render 'relationships/follow', locals: {follow: @follow, user: @user} %><br>
+    <text>---------------------------------</text>
+    <p><strong>Region: </strong><%=@trip.region%>  -  <strong>Rating: </strong><%=@trip.rating%>  -  <strong>Date of Trip: </strong><%=@trip.date%></p>
+    <text>---------------------------------</text>
+    <p><%=@trip.content%></p><br>
 
   <text>---------------------------------</text>
   <text>COMMENTS</text>
   <text>---------------------------------</text>
+
   <%@comments.reverse.each do |comment|%>
-  <p class='comment'><%=comment.content%></p>
-  <p class='comment_author'><%=User.find(comment.user_id).full_name%></p>
-  <text>---------------------------------</text>
+    <p class='comment'><%=comment.content%></p>
+    <p class='comment_author'>@<%=User.find(comment.user_id).username%></p>
+    <text>---------------------------------</text>
   <%end%>
 
   <%= render partial: 'comments/form', object: @comment  %>
