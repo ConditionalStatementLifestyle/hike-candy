@@ -2,6 +2,8 @@ class AuthenticationsController < ApplicationController
 
 
   def new
+    @user = User.new
+    @errors = []
   end
 
   def create
@@ -10,9 +12,14 @@ class AuthenticationsController < ApplicationController
       session[:user_id] = @user.id
       session[:username] = @user.username
       redirect_to '/feed'
+    elsif @user
+      @errors = []
+      @errors << "Those credentials do not match.  Try again!"
+      render 'authentications/new'
     else
-      @errors = @user.errors.full_messages
-      redirect_to :login
+      @errors = []
+      @errors << "Those credentials do not match.  Try again!"
+      render 'authentications/new'
     end
   end
 

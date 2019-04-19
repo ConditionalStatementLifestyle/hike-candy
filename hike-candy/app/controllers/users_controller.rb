@@ -26,17 +26,17 @@ class UsersController < ApplicationController
       User.find(pr.follower_id)
     end
 
-
     @posts = @follow.posts.last(5)
     @trips = @follow.trips.last(5)
-
-
-
   end
+
+
 
   def new
     @user = User.new
   end
+
+
 
   def create
     @user = User.new(user_params)
@@ -45,7 +45,7 @@ class UsersController < ApplicationController
       redirect_to '/feed'
     else
       @errors = @user.errors.full_messages
-      redirect_to :signup
+      render '/users/new'
     end
   end
 

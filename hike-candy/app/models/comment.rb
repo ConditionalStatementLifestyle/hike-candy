@@ -2,6 +2,8 @@ class Comment < ApplicationRecord
   belongs_to :commentable, polymorphic: true
   belongs_to :user
 
+  validates :content, presence: true
+
 
   def self.post_comments
     self.all.select {|comment| comment.commentable_type == "Post"}

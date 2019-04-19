@@ -156,6 +156,14 @@ a:active {
   color: green;
 }
 
-/* .trip_post_text {
+.trip_post_text {
   font-family: Montserrat, sans-serif;
-} */
+  font-size: 12px;
+}
+
+h4.error_explanation{
+  text-align: center;
+  color: red;
+  font-size: 14px;
+  font-weight: bold;
+}

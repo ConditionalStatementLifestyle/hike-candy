@@ -1,3 +1,12 @@
+<% if @user.errors.any? %>
+  <h4 class="error_explanation">
+    <% @errors.each do |msg| %>
+    <%= msg %><br>
+    <% end %>
+  </h4>
+<% end %>
+
+
 <div class = 'trip_post_text'>
 
   <body>

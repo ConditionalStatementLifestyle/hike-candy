@@ -1,4 +1,11 @@
-<%=@errors%>
+<% if @errors.any? %>
+  <h4 class="error_explanation">
+    <% @errors.each do |msg| %>
+    <%= msg %>
+    <% end %>
+  </h4>
+<% end %>
+
 <body>
   <div class='login'>
     <%=form_for :authentication, url: '/login' do |f| %>
