@@ -1,4 +1,5 @@
 <div class='backgroundbox'>
+<div class='font'>
   <h1><%=@trip.title%></h1>
   <p>By: <%=link_to @trip.user.username, user_path(@trip.user)%></p>
   <%= render 'relationships/follow', locals: {follow: @follow, user: @user} %><br>
@@ -19,4 +20,8 @@
   <%= render partial: 'comments/form', object: @comment  %>
 <br>
 <br>
+<% if session[:user_id] == @trip.user_id%>
+<%= link_to "Delete Trip", @trip, method: :delete, data: { confirm: "Are you sure?" } %>
+<%end%><br><br><br>
+</div>
 </div>

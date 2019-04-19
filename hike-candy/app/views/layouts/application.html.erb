@@ -28,7 +28,10 @@
       <hr>
 
       <div id="tree"><h1 class="fa fa-tree">Hike Candy</h1></div>
-
+      <div class='feed'>
+      <%=link_to "Create Trip", new_trip_path %>
+      <%=link_to "Create Post", new_post_path %>
+      </div>
     <%= yield %>
   </body>
 

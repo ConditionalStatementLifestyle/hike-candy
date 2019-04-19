@@ -1,9 +1,7 @@
-<%=link_to "Create Trip", new_trip_path %>
-<%=link_to "Create Post", new_post_path %>
 <div style = "text-align: center;"">
 <div class='background'><h1 class='feed_title'>Latest Trips</h1>
 <% @trips.each do |t| %>
-    <div class="feed"><div class = "post_title_ind"><%= t.title %></div> - <%= "Rating: " + "#{t.rating}" %>  <%=link_to "Read the Full Trip", trip_path(t)%><br><br></div>
+    <div class="feed"><div class = "post_title_ind"><%= t.title %></div> - <%= "Rating: " + "#{t.rating}, Region: #{t.region}" %> <br> <%=link_to "Read the Full Trip", trip_path(t)%><br><br></div>
 <% end %>
 <br>
 <div class='feed_words'><%=link_to "See All Trips", trips_path%></div>

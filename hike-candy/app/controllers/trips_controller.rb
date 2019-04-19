@@ -8,9 +8,8 @@ class TripsController < ApplicationController
 
   def show
     @user = User.find(session[:user_id])
-    @follow = User.find(params[:id])
-    # byebug
     @trip = Trip.find(params[:id])
+    @follow = @trip.user
     @comment = Comment.new(commentable: @trip)
     @comments = Comment.trip_comments.select {|comment| comment.commentable_id == params[:id].to_i}
   end
@@ -31,6 +30,12 @@ class TripsController < ApplicationController
       render :new
     end
 
+  end
+
+  def destroy
+    @trip = Trip.find(params[:id])
+    @trip.destroy
+    redirect_to feed_path
   end
 
 

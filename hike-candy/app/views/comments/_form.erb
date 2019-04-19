@@ -2,5 +2,5 @@
 <%=f.text_area :content%><br>
 <%= hidden_field_tag(:commentable_type, @comment.commentable_type) %>
 <%= hidden_field_tag(:commentable_id, @comment.commentable_id) %>
-<%=f.submit "Comment"%>
+<div class='font'><%=f.submit "Comment"%></div>
 <%end%>

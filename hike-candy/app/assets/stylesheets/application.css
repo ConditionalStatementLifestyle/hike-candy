@@ -9,8 +9,13 @@ button.logout {
   background-color: green;
 }
 
+
 button.logout:hover {
   background-color: blue;
+}
+
+.font {
+  font-family: dancing script;
 }
 
 .navbar {
@@ -37,6 +42,10 @@ color: white;
 }
 
 .login {
+  text-align: center;
+}
+
+.form {
   text-align: center;
 }
 

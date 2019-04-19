@@ -10,9 +10,12 @@ Rails.application.routes.draw do
   get 'users/:id/follow', to: 'relationships#index', as: "follow"
 
   resources :users, only: [:index, :show]
-  resources :posts
-  resources :trips
+  resources :posts, only: [:index, :new, :create, :show]
+  resources :trips, only: [:index, :new, :create, :show]
   resources :comments, only: [:create]
   resources :relationships, only: [:create, :destroy]
+
+  delete 'trips/:id', to: 'trips#destroy'
+  delete 'posts/:id', to: 'posts#destroy'
 
 end
