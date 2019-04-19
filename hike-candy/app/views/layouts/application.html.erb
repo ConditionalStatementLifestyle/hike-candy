@@ -21,7 +21,7 @@
         <a style="margin-right: 11%"><%= link_to "Posts", posts_path%> </a>
         <a style="margin-left: -30%"><%= link_to "Trips", trips_path%> </a></div>
         <% if logged_in? %>
-            <div style="float: left;"><%= "Current User: #{session[:username]}"%></div>
+            <div style="float: left;"><%= link_to "Current User: #{session[:username]}", user_path(User.find(session[:user_id]))%></div>
             <div style="float: right;"><%= link_to 'Logout', logout_path, {class: 'item', method: 'delete'} %></div>
           <% end %>
       </div>
@@ -29,7 +29,7 @@
 
       <div id="tree"><h1 class="fa fa-tree">Hike Candy</h1></div>
       <div class='feed'>
-      <%=link_to "Create Trip", new_trip_path %>
+      <text style="margin-right:50px;"><%=link_to "Create Trip", new_trip_path %></text>
       <%=link_to "Create Post", new_post_path %>
       </div>
     <%= yield %>

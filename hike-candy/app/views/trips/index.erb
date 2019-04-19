@@ -1,7 +1,11 @@
 <div class='background'>
+<div class='font'>
+<text class='posts_index'> Trips </text><br><br><br><br><br>
 <% @trips.each do |trip| %>
-<div class='feed_words'><%= link_to "#{trip.title}", trip%></div>
+<div class='feed_words'><%= link_to "#{trip.title}", trip%></div><br>
+<text style="font-size:30px"><%=trip.region%></text>
 <div class='post_details'><%= "(#{trip.rating}) - #{trip.content}..."%></div>
-<br><br>
+<br><br><br><br><br><br>
 <% end %>
+</div>
 </div>

@@ -1,7 +1,9 @@
 <div class='background'>
+<div class='font'>
+  <text class='posts_index'> Posts </text><br><br>
   <% @posts.each do |post| %>
   <div style="text-decoration: none;", class="post_title"><%= link_to "#{post.title}", post%><br></div>
   <div class="post_details;"><%="#{post.description[0..30]}..."%><br></div>
   <br><br>
   <%end %>
-<div>
+</div>

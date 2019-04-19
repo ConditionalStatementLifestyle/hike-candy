@@ -21,6 +21,7 @@
 <br>
 <br>
 <% if session[:user_id] == @post.user_id%>
+<text style='margin-right: 50px;'><%= link_to "Update Trip", edit_post_path(@post) %></text>
 <%= link_to "Delete Post", @post, method: :delete, data: { confirm: "Are you sure?" } %>
 <%end%><br><br><br>
 </div>

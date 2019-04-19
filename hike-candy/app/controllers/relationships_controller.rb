@@ -28,7 +28,6 @@ class RelationshipsController < ApplicationController
     @post = Post.find(params[:id])
     @user = User.find(session[:user_id])
     @follow = @post.user
-
     @relation = Relationship.select do |r| r.follower_id == @user.id && r.followed_id == @follow.id end
     @relation[0].destroy
     redirect_back(fallback_location: root_path)
