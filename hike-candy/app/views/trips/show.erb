@@ -22,6 +22,7 @@
 <br>
 <br>
 <% if session[:user_id] == @trip.user_id%>
+<text style='margin-right: 50px;'><%= link_to "Update Trip", edit_trip_path(@trip) %></text>
 <%= link_to "Delete Trip", @trip, method: :delete, data: { confirm: "Are you sure?" } %>
 <%end%><br><br><br>
 </div>

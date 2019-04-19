@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_action :redirect_if_not_logged_in
 
   def index
-    @posts = Post.all
+    @posts = Post.all.reverse
   end
 
   def show
@@ -23,14 +23,24 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user_id = session[:user_id]
-    if @post.save
-      redirect_to @post
-    else
-      @errors = @post.errors.full_messages
-      render :new
+      if @post.save
+        redirect_to @post
+      else
+        @errors = @post.errors.full_messages
+        render :new
+      end
+
     end
 
-  end
+    def edit
+      @post = Post.find(params[:id])
+    end
+
+    def update
+      @post = Post.find(params[:id])
+      @post.update(title: post_params['title'], description: post_params['description'])
+      redirect_to post_path(@post)
+    end
 
   def destroy
     @post = Post.find(params[:id])

@@ -1,0 +1,19 @@
+<div class='font'>
+<div class='form'>
+<h2>Edit Trip</h2>
+<%=form_for @trip do |f|%>
+<%=f.label :title%>
+<%=f.text_field :title%><br><br>
+<%=f.label :rating%>
+<%=f.number_field :rating, step: 0.25%><br><br>
+<%=f.label :date%>
+<%=f.date_field :date%><br><br>
+<%=f.label :region%>
+<%=f.select :region, [['North Cascades', 'north cascades'],['Central Cascades', 'central cascades'],['Mount Ranier','mount rainier'],['Wenatchee National Forest','wenatchee national forest'],['Mount Baker-Snoqualmie National Forest', 'mount baker-snoqualmie national forest'],['Colville National Forest','colville national forest'],['Olympic Penninsula','olympic penninsula'],['Eastern Washington', 'eastern washington'],['Issaquah Alps', 'issaquah alps'],['Pudget Sound', 'pudget sound'],['South Cascades', 'south cascades'],['Seattle Area', 'aeattle area']]%><br><br>
+<%=f.label :content%>
+<%=f.text_area :content%><br>
+<%=f.submit%>
+<%end%>
+
+</div>
+</div>

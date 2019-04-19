@@ -10,8 +10,8 @@ Rails.application.routes.draw do
   get 'users/:id/follow', to: 'relationships#index', as: "follow"
 
   resources :users, only: [:index, :show]
-  resources :posts, only: [:index, :new, :create, :show]
-  resources :trips, only: [:index, :new, :create, :show]
+  resources :posts, only: [:index, :new, :create, :show, :edit, :update]
+  resources :trips, only: [:index, :new, :create, :show, :edit, :update]
   resources :comments, only: [:create]
   resources :relationships, only: [:create, :destroy]
 
