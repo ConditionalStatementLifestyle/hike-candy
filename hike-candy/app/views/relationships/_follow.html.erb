@@ -1,17 +1,14 @@
-
-<% if params[:id] != session[:user_id] %>
+<% if @event_user_id != session[:user_id] %>
   <% if !@user.follow?(@follow) %>
     <%= form_tag('/relationships') do %>
       <%= hidden_field_tag :followed_id, @follow.id %>
       <%= hidden_field_tag :follower_id, @user.id %>
-      <%= hidden_field_tag :method, params['controller'] %>
       <%= submit_tag "Follow" %>
-      <%=%>
     <% end %>
 
   <% else %>
 
-    <%= button_to "Unfollow", relationship_path, method: :delete %>
+    <%= button_to "Unfollow", relationship_path, method: :delete, params: {page_type: params[:controller]} %>
 
   <% end %>
 

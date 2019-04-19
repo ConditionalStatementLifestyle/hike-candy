@@ -1,4 +1,5 @@
 <div class='backgroundbox'>
+<div class='font'>
   <h3><%= "Following (#{@followingcount})" %></h3>
   <% @followingobjects.each do |ar| %>
   <%= link_to ar.username, user_path(ar) %><br>
@@ -7,6 +8,7 @@
   <br>
   <h3><%= "Followers (#{@followercount})" %></h3>
   <% @followerobjects.each do |pr| %>
-  <%= link_to pr.username, user_path(pr) %><br>
+  <%= link_to pr.username, user_path(pr) %><br><br><br>
   <% end %>
-<div>
+</div>
+</div>

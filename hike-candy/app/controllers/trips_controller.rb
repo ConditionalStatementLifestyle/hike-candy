@@ -10,6 +10,7 @@ class TripsController < ApplicationController
     @user = User.find(session[:user_id])
     @trip = Trip.find(params[:id])
     @follow = @trip.user
+    @event_user_id = @follow.id
     @comment = Comment.new(commentable: @trip)
     @comments = Comment.trip_comments.select {|comment| comment.commentable_id == params[:id].to_i}
   end
