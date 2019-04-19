@@ -1,18 +1,22 @@
-<h3>Name: <%=@follow.first_name%> <%= @follow.last_name%></h3>
-<p>Username: <%=@follow.username%></p>
+<div class='backgroundbox'>
+<h1>@<%=@follow.username%></h1>
 
+<text>Following <%= link_to "(#{@followingcount})", follow_path(@follow) %> ---
+<text>Followers <%= link_to "(#{@followercount})", follow_path(@follow) %></text>
 <%= render 'relationships/follow', locals: {follow: @follow, user: @user} %>
-
-<p>Following <%= link_to "(#{@followingcount})", follow_path(@follow) %></p>
-<p>Followers <%= link_to "(#{@followercount})", follow_path(@follow) %></p>
 
 <h1><%= "Latest Trips" %></h1>
   <% @trips.each do |t| %>
+  <text>---------------------------------</text>
       <%= t.title %> - <%= "Rating: " + "#{t.rating}" %> <br> <%=link_to "Read the Full Trip", trip_path(t)%><br><br>
   <% end %>
   <br>
 <h1><%= "Latest Posts" %></h1>
   <% @posts.each do |p| %>
+  <text>---------------------------------</text>
       <h3><%= p.title %></h3>
       <%= p.description.truncate_words(4) %>  <%=link_to "Read the Full Post", post_path(p)%><br>
   <% end %>
+  <br>
+  <br>
+</div>
