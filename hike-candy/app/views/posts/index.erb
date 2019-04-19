@@ -1,5 +1,7 @@
-<div class='backgroundbox'>
+<div class='background'>
   <% @posts.each do |post| %>
-  <div style="text-decoration: none;"><%= link_to "#{post.title}", post%><br></div>
+  <div style="text-decoration: none;", class="post_title"><%= link_to "#{post.title}", post%><br></div>
+  <div class="post_details;"><%="#{post.description[0..30]}..."%><br></div>
+  <br><br>
   <%end %>
 <div>
