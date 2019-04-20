@@ -27,3 +27,6 @@
 /config/master.key
 
 rm .DS_Store
+
+tmp/*
+log/*
